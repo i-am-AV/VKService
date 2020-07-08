@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		9598B09524B6474C00CDB667 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598B09424B6474C00CDB667 /* AppDelegate.swift */; };
-		9598B09924B6474C00CDB667 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598B09824B6474C00CDB667 /* ViewController.swift */; };
-		9598B09C24B6474C00CDB667 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9598B09A24B6474C00CDB667 /* Main.storyboard */; };
 		9598B09E24B6474E00CDB667 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9598B09D24B6474E00CDB667 /* Assets.xcassets */; };
 		9598B0A124B6474E00CDB667 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9598B09F24B6474E00CDB667 /* LaunchScreen.storyboard */; };
 		9598B0AB24B6568400CDB667 /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9598B0AA24B6568400CDB667 /* VKSdkFramework.framework */; };
 		9598B0AC24B6568400CDB667 /* VKSdkFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9598B0AA24B6568400CDB667 /* VKSdkFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9598B0AF24B65EF600CDB667 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598B0AE24B65EF600CDB667 /* AuthService.swift */; };
+		9598B0B224B668A400CDB667 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598B0B124B668A400CDB667 /* AuthViewController.swift */; };
+		9598B0B624B668DC00CDB667 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598B0B324B668DC00CDB667 /* API.swift */; };
+		9598B0B724B668DC00CDB667 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598B0B524B668DC00CDB667 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,12 +35,14 @@
 /* Begin PBXFileReference section */
 		9598B09124B6474C00CDB667 /* NetworkService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9598B09424B6474C00CDB667 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9598B09824B6474C00CDB667 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9598B09B24B6474C00CDB667 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9598B09D24B6474E00CDB667 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9598B0A024B6474E00CDB667 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9598B0A224B6474E00CDB667 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9598B0AA24B6568400CDB667 /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
+		9598B0AE24B65EF600CDB667 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		9598B0B124B668A400CDB667 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		9598B0B324B668DC00CDB667 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		9598B0B524B668DC00CDB667 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,9 +77,9 @@
 		9598B09324B6474C00CDB667 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				9598B0B924B669E300CDB667 /* Controller */,
 				9598B09424B6474C00CDB667 /* AppDelegate.swift */,
-				9598B09824B6474C00CDB667 /* ViewController.swift */,
-				9598B09A24B6474C00CDB667 /* Main.storyboard */,
+				9598B0B024B65EFC00CDB667 /* Services */,
 				9598B09D24B6474E00CDB667 /* Assets.xcassets */,
 				9598B09F24B6474E00CDB667 /* LaunchScreen.storyboard */,
 				9598B0A224B6474E00CDB667 /* Info.plist */,
@@ -89,6 +93,24 @@
 				9598B0AA24B6568400CDB667 /* VKSdkFramework.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9598B0B024B65EFC00CDB667 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9598B0AE24B65EF600CDB667 /* AuthService.swift */,
+				9598B0B324B668DC00CDB667 /* API.swift */,
+				9598B0B524B668DC00CDB667 /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9598B0B924B669E300CDB667 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9598B0B124B668A400CDB667 /* AuthViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +175,6 @@
 			files = (
 				9598B0A124B6474E00CDB667 /* LaunchScreen.storyboard in Resources */,
 				9598B09E24B6474E00CDB667 /* Assets.xcassets in Resources */,
-				9598B09C24B6474C00CDB667 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,7 +206,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9598B09924B6474C00CDB667 /* ViewController.swift in Sources */,
+				9598B0B724B668DC00CDB667 /* NetworkService.swift in Sources */,
+				9598B0AF24B65EF600CDB667 /* AuthService.swift in Sources */,
+				9598B0B224B668A400CDB667 /* AuthViewController.swift in Sources */,
+				9598B0B624B668DC00CDB667 /* API.swift in Sources */,
 				9598B09524B6474C00CDB667 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,14 +217,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9598B09A24B6474C00CDB667 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9598B09B24B6474C00CDB667 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9598B09F24B6474E00CDB667 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
